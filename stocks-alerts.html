@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Price Alerts</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0f1419; color: #f8fafc; min-height: 100vh; padding: 1rem; }
+    .container { max-width: 800px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #2a2a2a; }
+    h1 { font-size: 1.5rem; background: linear-gradient(135deg, #22c55e, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .debug { background: #1a1a1a; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: monospace; font-size: 0.75rem; white-space: pre-wrap; max-height: 80px; overflow-y: auto; color: #94a3b8; }
+    .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; transition: all 0.3s; }
+    .card:hover { border-color: #22c55e; }
+    .card.flash { animation: flash 0.5s ease 3; }
+    @keyframes flash { 0%,100% { border-color: #2a2a2a; box-shadow: none; } 50% { border-color: #f59e0b; box-shadow: 0 0 30px #f59e0b50; } }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .asset-name { font-size: 1.25rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+    .asset-icon { font-size: 1.5rem; }
+    .price { font-size: 1.75rem; font-weight: 700; color: #22c55e; margin-bottom: 0.5rem; }
+    .change { font-size: 0.875rem; margin-bottom: 0.5rem; }
+    .change.up { color: #22c55e; }
+    .change.down { color: #ef4444; }
+    .range { color: #94a3b8; font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .state { padding: 0.4rem 0.8rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; display: inline-block; }
+    .state.inside { background: #22c55e20; color: #22c55e; }
+    .state.outside { background: #374151; color: #94a3b8; }
+    .btn { padding: 0.5rem 1rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.875rem; }
+    .btn-primary { background: #22c55e; color: #0f1419; }
+    .btn-primary:hover { background: #34d76a; }
+    .btn-danger { background: transparent; color: #ef4444; border: 1px solid #ef4444; }
+    .btn-danger:hover { background: #ef4444; color: white; }
+    .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 100; }
+    .modal.active { display: flex; }
+    .modal-content { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 2rem; width: 90%; max-width: 400px; }
+    .modal h2 { margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; color: #94a3b8; font-size: 0.875rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem; background: #0f1419; border: 1px solid #2a2a2a; border-radius: 8px; color: #f8fafc; font-size: 1rem; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #22c55e; }
+    .btn-block { width: 100%; padding: 1rem; margin-top: 0.5rem; }
+    .toast { position: fixed; top: 20px; right: 20px; background: #1a1a1a; border: 2px solid #22c55e; border-radius: 12px; padding: 1rem 1.5rem; z-index: 1000; animation: slideIn 0.3s; }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(120%); } to { opacity: 1; transform: translateX(0); } }
+    .toast-title { font-weight: 700; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .toast-msg { font-size: 0.875rem; color: #94a3b8; }
+    .empty { text-align: center; padding: 3rem; color: #94a3b8; }
+    .section-title { font-size: 1.1rem; margin: 1.5rem 0 1rem; color: #94a3b8; }
+    .alert-item { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 1rem; margin-bottom: 0.5rem; display: flex; gap: 1rem; align-items: center; }
+    .status { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem; color: #94a3b8; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+    .note { background: #2a2a2a; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.875rem; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div id="toasts"></div>
+
+  <div class="container">
+    <header>
+      <h1>📈 Stock Alerts</h1>
+      <button class="btn btn-primary" onclick="showModal()">+ Add Alert</button>
+    </header>
+
+    <div class="note">Free tier: 25 requests/day. Get your free API key at <strong>alphavantage.co</strong></div>
+    <div class="status"><span class="status-dot"></span> Live prices from Alpha Vantage</div>
+    <div id="debug" class="debug">Initializing...</div>
+    <div id="alertsContainer"></div>
+
+    <div class="section-title">📋 Alert History</div>
+    <div id="historyContainer"></div>
+  </div>
+
+  <div id="modal" class="modal" onclick="if(event.target===this)hideModal()">
+    <div class="modal-content">
+      <h2>Add Stock Alert</h2>
+      <div class="form-group">
+        <label>Stock Symbol</label>
+        <select id="assetSelect">
+          <option value="">Select stock...</option>
+          <option value="AAPL">Apple (AAPL)</option>
+          <option value="GOOGL">Google (GOOGL)</option>
+          <option value="MSFT">Microsoft (MSFT)</option>
+          <option value="AMZN">Amazon (AMZN)</option>
+          <option value="TSLA">Tesla (TSLA)</option>
+          <option value="META">Meta (META)</option>
+          <option value="NVDA">NVIDIA (NVDA)</option>
+          <option value="JPM">JPMorgan (JPM)</option>
+          <option value="V">Visa (V)</option>
+          <option value="WMT">Walmart (WMT)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Min Price (USD)</label>
+        <input type="number" id="minPrice" step="any" placeholder="150">
+      </div>
+      <div class="form-group">
+        <label>Max Price (USD)</label>
+        <input type="number" id="maxPrice" step="any" placeholder="160">
+      </div>
+      <button class="btn btn-primary btn-block" onclick="addAlert()">Add Alert</button>
+      <button class="btn btn-danger btn-block" onclick="hideModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const STOCK_ICONS = {
+      'AAPL': '🍎', 'GOOGL': '🔍', 'MSFT': '🪟', 'AMZN': '📦', 'TSLA': '🚗',
+      'META': '📘', 'NVDA': '🎮', 'JPM': '🏦', 'V': '💳', 'WMT': '🛒'
+    };
+
+    const API_KEY = 'demo';
+    const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+
+    let alerts = JSON.parse(localStorage.getItem('stock_alerts') || '[]');
+    let history = JSON.parse(localStorage.getItem('stock_history') || '[]');
+    let prices = {};
+    let prevClose = {};
+    let triggered = new Set();
+    let retryCount = 0;
+    const debug = document.getElementById('debug');
+
+    function log(msg) {
+      debug.textContent = new Date().toLocaleTimeString() + ' | ' + msg + '\n' + debug.textContent.slice(0, 300);
+    }
+
+    function save() {
+      localStorage.setItem('stock_alerts', JSON.stringify(alerts));
+      localStorage.setItem('stock_history', JSON.stringify(history.slice(0, 30)));
+    }
+
+    function showModal() {
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function hideModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    function addAlert() {
+      const symbol = document.getElementById('assetSelect').value;
+      const min = parseFloat(document.getElementById('minPrice').value);
+      const max = parseFloat(document.getElementById('maxPrice').value);
+      
+      if (!symbol || !min || !max || min >= max) {
+        alert('Please fill all fields correctly.\nMin must be less than Max.');
+        return;
+      }
+
+      alerts = alerts.filter(a => a.symbol !== symbol);
+      alerts.push({ symbol, min, max, lastInRange: false });
+      
+      save();
+      render();
+      hideModal();
+      log('Added: ' + symbol + ' | $' + min + ' - $' + max);
+    }
+
+    function removeAlert(symbol) {
+      alerts = alerts.filter(a => a.symbol !== symbol);
+      triggered.clear();
+      save();
+      render();
+      log('Removed: ' + symbol);
+    }
+
+    function triggerAlert(symbol, price, min, max) {
+      const key = symbol + '-' + min + '-' + max;
+      if (triggered.has(key)) return;
+      triggered.add(key);
+
+      history.unshift({ symbol, price, min, max, time: Date.now() });
+      save();
+      renderHistory();
+
+      showToast(symbol, price, min, max);
+
+      if (Notification.permission === 'granted') {
+        new Notification(symbol + ' Alert!', {
+          body: 'Price $' + price.toLocaleString() + ' is in range ($' + min + ' - $' + max + ')',
+        });
+      }
+
+      if ('vibrate' in navigator) navigator.vibrate([200, 100, 200]);
+
+      const card = document.getElementById('card-' + symbol);
+      if (card) {
+        card.classList.add('flash');
+        setTimeout(() => card.classList.remove('flash'), 2000);
+      }
+    }
+
+    function showToast(symbol, price, min, max) {
+      const div = document.createElement('div');
+      div.className = 'toast';
+      div.innerHTML = `
+        <div class="toast-title">🔔 ${symbol} Alert!</div>
+        <div class="toast-msg">$${price.toLocaleString()} in range ($${min.toLocaleString()} - $${max.toLocaleString()})</div>
+      `;
+      document.getElementById('toasts').appendChild(div);
+      setTimeout(() => div.remove(), 5000);
+    }
+
+    function render() {
+      const container = document.getElementById('alertsContainer');
+      
+      if (alerts.length === 0) {
+        container.innerHTML = '<div class="empty">No alerts set. Click "+ Add Alert" to start.</div>';
+        return;
+      }
+
+      container.innerHTML = alerts.map(a => {
+        const price = prices[a.symbol];
+        const prev = prevClose[a.symbol];
+        const inRange = price >= a.min && price <= a.max;
+        const icon = STOCK_ICONS[a.symbol] || '📊';
+        const change = prev ? ((price - prev) / prev * 100).toFixed(2) : null;
+        
+        return `
+          <div class="card" id="card-${a.symbol}">
+            <div class="card-header">
+              <span class="asset-name"><span class="asset-icon">${icon}</span>${a.symbol}</span>
+              <button class="btn btn-danger" onclick="removeAlert('${a.symbol}')">Remove</button>
+            </div>
+            <div class="price">${price ? '$' + price.toLocaleString() : 'Loading...'}</div>
+            ${change !== null ? `<div class="change ${change >= 0 ? 'up' : 'down'}">${change >= 0 ? '▲' : '▼'} ${Math.abs(change)}%</div>` : ''}
+            <div class="range">Target: $${a.min.toLocaleString()} - $${a.max.toLocaleString()}</div>
+            <span class="state ${inRange ? 'inside' : 'outside'}">${inRange ? '✓ In Range' : '○ Waiting'}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderHistory() {
+      const container = document.getElementById('historyContainer');
+      if (history.length === 0) {
+        container.innerHTML = '<div class="empty" style="padding:1rem">No alerts triggered yet</div>';
+        return;
+      }
+      container.innerHTML = history.map(h => `
+        <div class="alert-item">
+          <span>🔔</span>
+          <div>
+            <strong>${h.symbol}</strong> - $${h.price.toLocaleString()}
+            <div style="font-size:0.75rem;color:#64748b;margin-top:2px">
+              Range: $${h.min.toLocaleString()} - $${h.max.toLocaleString()} | ${new Date(h.time).toLocaleTimeString()}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    async function fetchPrices() {
+      if (alerts.length === 0) return;
+
+      for (const alert of alerts) {
+        try {
+          const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${alert.symbol}&apikey=${API_KEY}`;
+          log('Fetching ' + alert.symbol + '...');
+          
+          const res = await fetch(CORS_PROXY + encodeURIComponent(url));
+          
+          if (!res.ok) {
+            log('API error: ' + res.status);
+            continue;
+          }
+          
+          const data = await res.json();
+          
+          if (data['Global Quote'] && data['Global Quote']['05. price']) {
+            const price = parseFloat(data['Global Quote']['05. price']);
+            if (!prevClose[alert.symbol]) {
+              prevClose[alert.symbol] = parseFloat(data['Global Quote']['08. previous close']) || price;
+            }
+            prices[alert.symbol] = price;
+            log(alert.symbol + ': $' + price);
+          }
+        } catch (e) {
+          log('Error: ' + alert.symbol + ' - ' + e.message);
+        }
+        
+        await new Promise(r => setTimeout(r, 1000));
+      }
+      
+      log('Price update complete');
+    }
+
+    function checkAlerts() {
+      alerts.forEach(a => {
+        const price = prices[a.symbol];
+        if (!price) return;
+
+        const wasIn = a.lastInRange === true;
+        const isIn = price >= a.min && price <= a.max;
+
+        if (isIn && !wasIn) {
+          log('TRIGGER: ' + a.symbol + ' at $' + price);
+          triggerAlert(a.symbol, price, a.min, a.max);
+        }
+
+        a.lastInRange = isIn;
+      });
+      save();
+      render();
+    }
+
+    async function init() {
+      log('Starting Stock Alerts...');
+      render();
+      renderHistory();
+      
+      await fetchPrices();
+      checkAlerts();
+
+      setInterval(async () => {
+        await fetchPrices();
+        checkAlerts();
+      }, 60000);
+
+      if ('Notification' in window && Notification.permission === 'default') {
+        Notification.requestPermission();
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

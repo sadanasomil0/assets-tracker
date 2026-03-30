@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Alert Manager</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a0f; color: #f8fafc; min-height: 100vh; padding: 1rem; }
+    .container { max-width: 800px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #1e293b; }
+    h1 { font-size: 1.5rem; background: linear-gradient(135deg, #6366f1, #22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .debug { background: #1a1a2e; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: monospace; font-size: 0.75rem; white-space: pre-wrap; max-height: 100px; overflow-y: auto; color: #94a3b8; }
+    .card { background: #12121a; border: 1px solid #1e293b; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; transition: all 0.3s; }
+    .card:hover { border-color: #6366f1; }
+    .card.flash { animation: flash 0.5s ease 3; }
+    @keyframes flash { 0%,100% { border-color: #1e293b; box-shadow: none; } 50% { border-color: #f59e0b; box-shadow: 0 0 30px #f59e0b50; } }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .asset-name { font-size: 1.25rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+    .asset-icon { font-size: 1.5rem; }
+    .price { font-size: 1.75rem; font-weight: 700; color: #6366f1; margin-bottom: 0.5rem; }
+    .range { color: #94a3b8; font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .state { padding: 0.4rem 0.8rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; display: inline-block; }
+    .state.inside { background: #22c55e20; color: #22c55e; }
+    .state.outside { background: #374151; color: #94a3b8; }
+    .btn { padding: 0.5rem 1rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.875rem; }
+    .btn-primary { background: #6366f1; color: white; }
+    .btn-primary:hover { background: #818cf8; }
+    .btn-danger { background: transparent; color: #ef4444; border: 1px solid #ef4444; }
+    .btn-danger:hover { background: #ef4444; color: white; }
+    .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 100; }
+    .modal.active { display: flex; }
+    .modal-content { background: #12121a; border: 1px solid #1e293b; border-radius: 16px; padding: 2rem; width: 90%; max-width: 400px; }
+    .modal h2 { margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; color: #94a3b8; font-size: 0.875rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem; background: #0a0a0f; border: 1px solid #1e293b; border-radius: 8px; color: #f8fafc; font-size: 1rem; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #6366f1; }
+    .btn-block { width: 100%; padding: 1rem; margin-top: 0.5rem; }
+    .toast { position: fixed; top: 20px; right: 20px; background: #12121a; border: 2px solid #22c55e; border-radius: 12px; padding: 1rem 1.5rem; z-index: 1000; animation: slideIn 0.3s; }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(120%); } to { opacity: 1; transform: translateX(0); } }
+    .toast-title { font-weight: 700; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .toast-msg { font-size: 0.875rem; color: #94a3b8; }
+    .empty { text-align: center; padding: 3rem; color: #94a3b8; }
+    .section-title { font-size: 1.1rem; margin: 1.5rem 0 1rem; color: #94a3b8; }
+    .alert-item { background: #12121a; border: 1px solid #1e293b; border-radius: 8px; padding: 1rem; margin-bottom: 0.5rem; display: flex; gap: 1rem; align-items: center; }
+    .alert-item span:first-child { font-size: 1.25rem; }
+    .note { background: #1e293b; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.875rem; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div id="toasts"></div>
+
+  <div class="container">
+    <header>
+      <h1>Price Alerts</h1>
+      <button class="btn btn-primary" onclick="showModal()">+ Add Alert</button>
+    </header>
+
+    <div id="debug" class="debug">Initializing...</div>
+
+    <div id="alertsContainer"></div>
+
+    <div class="section-title">📋 Alert History</div>
+    <div id="historyContainer"></div>
+  </div>
+
+  <div id="modal" class="modal" onclick="if(event.target===this)hideModal()">
+    <div class="modal-content">
+      <h2>Add Price Alert</h2>
+      <div class="form-group">
+        <label>Cryptocurrency</label>
+        <select id="assetSelect">
+          <option value="">Select coin...</option>
+          <option value="bitcoin">Bitcoin (BTC)</option>
+          <option value="ethereum">Ethereum (ETH)</option>
+          <option value="solana">Solana (SOL)</option>
+          <option value="ripple">XRP</option>
+          <option value="cardano">Cardano (ADA)</option>
+          <option value="dogecoin">Dogecoin (DOGE)</option>
+          <option value="polkadot">Polkadot (DOT)</option>
+          <option value="chainlink">Chainlink (LINK)</option>
+          <option value="avalanche-2">Avalanche (AVAX)</option>
+          <option value="litecoin">Litecoin (LTC)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Min Price (USD)</label>
+        <input type="number" id="minPrice" step="any" placeholder="60000">
+      </div>
+      <div class="form-group">
+        <label>Max Price (USD)</label>
+        <input type="number" id="maxPrice" step="any" placeholder="62000">
+      </div>
+      <button class="btn btn-primary btn-block" onclick="addAlert()">Add Alert</button>
+      <button class="btn btn-danger btn-block" onclick="hideModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const COIN_ICONS = {
+      'bitcoin': '₿', 'ethereum': 'Ξ', 'solana': '◎', 'ripple': '✕', 
+      'cardano': '₳', 'dogecoin': 'Ð', 'polkadot': '●', 'chainlink': '⬡',
+      'avalanche-2': '▲', 'litecoin': 'Ł'
+    };
+
+    let alerts = JSON.parse(localStorage.getItem('pa_alerts') || '[]');
+    let history = JSON.parse(localStorage.getItem('pa_history') || '[]');
+    let prices = {};
+    let triggered = new Set();
+    const debug = document.getElementById('debug');
+
+    function log(msg) {
+      debug.textContent = new Date().toLocaleTimeString() + ' | ' + msg + '\n' + debug.textContent.slice(0, 300);
+    }
+
+    function save() {
+      localStorage.setItem('pa_alerts', JSON.stringify(alerts));
+      localStorage.setItem('pa_history', JSON.stringify(history.slice(0, 30)));
+    }
+
+    function showModal() {
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function hideModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    function addAlert() {
+      const coin = document.getElementById('assetSelect').value;
+      const min = parseFloat(document.getElementById('minPrice').value);
+      const max = parseFloat(document.getElementById('maxPrice').value);
+      
+      if (!coin || !min || !max || min >= max) {
+        alert('Please fill all fields correctly.\nMin must be less than Max.');
+        return;
+      }
+
+      const currentPrice = prices[coin];
+      const inRange = currentPrice >= min && currentPrice <= max;
+
+      alerts = alerts.filter(a => a.coin !== coin);
+      alerts.push({ coin, min, max, lastInRange: false });
+      
+      save();
+      render();
+      hideModal();
+
+      log('Added: ' + coin + ' | $' + min + ' - $' + max + (inRange ? ' (in range)' : ''));
+    }
+
+    function removeAlert(coin) {
+      alerts = alerts.filter(a => a.coin !== coin);
+      triggered.clear();
+      save();
+      render();
+      log('Removed: ' + coin);
+    }
+
+    function triggerAlert(coin, price, min, max) {
+      const key = coin + '-' + min + '-' + max;
+      if (triggered.has(key)) return;
+      triggered.add(key);
+
+      history.unshift({ coin, price, min, max, time: Date.now() });
+      save();
+      renderHistory();
+
+      showToast(coin, price, min, max);
+
+      if (Notification.permission === 'granted') {
+        new Notification(coin.charAt(0).toUpperCase() + coin.slice(1) + ' Alert!', {
+          body: 'Price $' + price.toLocaleString() + ' is in range ($' + min + ' - $' + max + ')',
+          icon: '🔔'
+        });
+      }
+
+      if ('vibrate' in navigator) navigator.vibrate([200, 100, 200]);
+
+      const card = document.getElementById('card-' + coin.replace(/[^a-z]/g, ''));
+      if (card) {
+        card.classList.add('flash');
+        setTimeout(() => card.classList.remove('flash'), 2000);
+      }
+    }
+
+    function showToast(coin, price, min, max) {
+      const div = document.createElement('div');
+      div.className = 'toast';
+      div.innerHTML = `
+        <div class="toast-title">🔔 ${coin.charAt(0).toUpperCase() + coin.slice(1)} Alert!</div>
+        <div class="toast-msg">$${price.toLocaleString()} in range ($${min.toLocaleString()} - $${max.toLocaleString()})</div>
+      `;
+      document.getElementById('toasts').appendChild(div);
+      setTimeout(() => div.remove(), 5000);
+    }
+
+    function render() {
+      const container = document.getElementById('alertsContainer');
+      
+      if (alerts.length === 0) {
+        container.innerHTML = '<div class="empty">No alerts set. Click "+ Add Alert" to start.</div>';
+        return;
+      }
+
+      container.innerHTML = alerts.map(a => {
+        const price = prices[a.coin];
+        const inRange = price >= a.min && price <= a.max;
+        const icon = COIN_ICONS[a.coin] || '●';
+        const name = a.coin.charAt(0).toUpperCase() + a.coin.slice(1).replace(/-2/, '');
+        
+        return `
+          <div class="card" id="card-${a.coin.replace(/[^a-z]/g, '')}">
+            <div class="card-header">
+              <span class="asset-name"><span class="asset-icon">${icon}</span>${name}</span>
+              <button class="btn btn-danger" onclick="removeAlert('${a.coin}')">Remove</button>
+            </div>
+            <div class="price">${price ? '$' + price.toLocaleString() : 'Loading...'}</div>
+            <div class="range">Target: $${a.min.toLocaleString()} - $${a.max.toLocaleString()}</div>
+            <span class="state ${inRange ? 'inside' : 'outside'}">${inRange ? '✓ In Range' : '○ Waiting'}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderHistory() {
+      const container = document.getElementById('historyContainer');
+      if (history.length === 0) {
+        container.innerHTML = '<div class="empty" style="padding:1rem">No alerts triggered yet</div>';
+        return;
+      }
+      container.innerHTML = history.map(h => {
+        const name = h.coin.charAt(0).toUpperCase() + h.coin.slice(1).replace(/-2/, '');
+        return `
+          <div class="alert-item">
+            <span>🔔</span>
+            <div>
+              <strong>${name}</strong> - $${h.price.toLocaleString()}
+              <div style="font-size:0.75rem;color:#64748b;margin-top:2px">
+                Range: $${h.min.toLocaleString()} - $${h.max.toLocaleString()} | ${new Date(h.time).toLocaleTimeString()}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function fetchPrices() {
+      if (alerts.length === 0) return;
+
+      const coins = alerts.map(a => a.coin).join(',');
+      
+      try {
+        const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coins}&vs_currencies=usd`;
+        log('Fetching: ' + url.slice(0, 60) + '...');
+        
+        const res = await fetch(url);
+        
+        if (!res.ok) {
+          log('API error: ' + res.status);
+          return;
+        }
+        
+        const data = await res.json();
+        
+        let updated = 0;
+        for (const coin of alerts) {
+          if (data[coin.coin]?.usd) {
+            prices[coin.coin] = data[coin.coin].usd;
+            updated++;
+          }
+        }
+        
+        log('Updated ' + updated + ' prices');
+      } catch (e) {
+        log('Fetch error: ' + e.message);
+      }
+    }
+
+    function checkAlerts() {
+      alerts.forEach(a => {
+        const price = prices[a.coin];
+        if (!price) return;
+
+        const wasIn = a.lastInRange === true;
+        const isIn = price >= a.min && price <= a.max;
+
+        if (isIn && !wasIn) {
+          log('TRIGGER: ' + a.coin + ' at $' + price);
+          triggerAlert(a.coin, price, a.min, a.max);
+        }
+
+        a.lastInRange = isIn;
+      });
+      save();
+      render();
+    }
+
+    async function init() {
+      log('Starting...');
+      render();
+      renderHistory();
+      
+      await fetchPrices();
+      checkAlerts();
+
+      // Poll every 10 seconds
+      setInterval(async () => {
+        await fetchPrices();
+        checkAlerts();
+      }, 10000);
+
+      // Request notification permission
+      if ('Notification' in window && Notification.permission === 'default') {
+        Notification.requestPermission();
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
