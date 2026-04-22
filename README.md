@@ -1,10 +1,12 @@
 ---
-title: Assets Tracker
-emoji: 📈
+title: Assets Tracker API
+emoji: 📊
 colorFrom: blue
-colorTo: green
+colorTo: indigo
 sdk: docker
-app_port: 8000
+sdk_version: 1.31.0
+app_file: app.py
+pinned: false
 ---
 # Multi-Asset Real-Time Price Alert Bot 📈🔔
 
