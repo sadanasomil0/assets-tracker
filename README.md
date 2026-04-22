@@ -1,3 +1,11 @@
+---
+title: Assets Tracker
+emoji: 📈
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 8000
+---
 # Multi-Asset Real-Time Price Alert Bot 📈🔔
 
 A production-ready Python bot that monitors **commodities**, **cryptocurrencies**, and **stocks** in real-time, and sends instant **Telegram alerts** when prices enter your defined ranges.
