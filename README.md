@@ -1,11 +1,10 @@
 ---
-title: My App
-emoji: 🚀
+title: Assets Tracker
+emoji: 📈
 colorFrom: blue
 colorTo: purple
-sdk: gradio
-sdk_version: "4.44.0"
-app_file: app.py
+sdk: docker
+app_file: main.py
 pinned: false
 ---
 # Multi-Asset Real-Time Price Alert Bot 📈🔔
