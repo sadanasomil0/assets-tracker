@@ -1,11 +1,9 @@
 ---
-title: Assets Tracker API
+title: Assets Tracker
 emoji: 📈
 colorFrom: blue
-colorTo: indigo
+colorTo: gray
 sdk: streamlit
-sdk_version: 1.31.0
-app_file: app.py
 pinned: false
 ---
 # Multi-Asset Real-Time Price Alert Bot 📈🔔
