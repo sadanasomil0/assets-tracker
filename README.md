@@ -1,9 +1,9 @@
 ---
 title: Assets Tracker API
-emoji: 
+emoji: 📈
 colorFrom: blue
 colorTo: indigo
-sdk: docker
+sdk: streamlit
 sdk_version: 1.31.0
 app_file: app.py
 pinned: false
