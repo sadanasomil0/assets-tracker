@@ -1,6 +1,6 @@
 ---
 title: Assets Tracker API
-emoji: 📊
+emoji: 
 colorFrom: blue
 colorTo: indigo
 sdk: docker
