@@ -1,0 +1,16 @@
+FROM python:3.11-slim
+
+WORKDIR /code
+
+# Install dependencies
+COPY requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+# Copy everything
+COPY . /code/
+
+# Expose port (your price_server or web parts can use it)
+EXPOSE 8000
+
+# Run the main app (this is what your repo uses)
+CMD ["python", "main.py"]
