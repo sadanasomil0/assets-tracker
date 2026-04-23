@@ -24,6 +24,7 @@ from fetchers.crypto_fetcher import stream_crypto
 from fetchers.stock_fetcher import poll_stocks
 from logger import get_logger
 from telegram_bot import TelegramBot
+from discord_notifier import send_alert as discord_send_alert
 
 log = get_logger("main")
 
@@ -90,10 +91,29 @@ async def main() -> None:
 
     # ── Alert dispatcher ─────────────────────────────────────────────────
     async def dispatch_alerts() -> None:
-        """Consume alert events from the queue and send Telegram notifications."""
+        """Consume alert events from the queue and send Discord notifications."""
         while True:
             event = await alert_queue.get()
             try:
+                # Determine condition and target
+                if event.price >= event.max_price:
+                    condition = "reached or exceeded upper target"
+                    target = event.max_price
+                elif event.price <= event.min_price:
+                    condition = "dropped to or below lower target"
+                    target = event.min_price
+                else:
+                    condition = "entered range"
+                    target = event.min_price  # default to lower bound
+                
+                # Send to Discord
+                discord_send_alert(
+                    asset=event.asset_name,
+                    price=event.price,
+                    condition=condition,
+                    target=target
+                )
+                # Also try Telegram (will fail gracefully if not configured)
                 await bot.send_alert(event)
             except Exception as exc:
                 log.error("Failed to dispatch alert: %s", exc)

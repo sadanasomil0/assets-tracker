@@ -1,19 +1,12 @@
 ```
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Logs
-*.log
-bot.log
-bot_log.txt
-bot_output.log
-
-# Environment
+# Environment files
 .env
+.env.local
+*.env.*
 
-# Generated files
-alerts.html
+# Log files
+*.log
+
+# State/persistent data
+state.json
 ```

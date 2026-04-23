@@ -3184,3 +3184,934 @@
 2026-04-23 11:43:35 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7137.8999
 2026-04-23 11:43:35 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24657.5703
 2026-04-23 11:43:35 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49490.0312
+2026-04-23 13:37:39 | INFO     | main | ==================================================
+2026-04-23 13:37:39 | INFO     | main |   Multi-Asset Price Alert Bot
+2026-04-23 13:37:39 | INFO     | main |   Mode: LIVE
+2026-04-23 13:37:39 | INFO     | main | ==================================================
+2026-04-23 13:37:39 | INFO     | persistence | No persistence file found at state.json — starting fresh
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset GOLD: $2900.0000 – $3200.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset SILVER: $30.0000 – $36.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset CRUDE_OIL: $65.0000 – $75.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset BTC: $80000.0000 – $95000.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset ETH: $1700.0000 – $2200.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset XRP: $2.0000 – $2.8000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset SOL: $120.0000 – $175.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset BNB: $580.0000 – $650.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset DOGE: $0.1500 – $0.2500
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset ADA: $0.6500 – $0.9000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset MATIC: $0.4000 – $0.6500
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset NVIDIA: $100.0000 – $135.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset TESLA: $240.0000 – $310.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset GOOGLE: $155.0000 – $185.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset AMAZON: $195.0000 – $225.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset ORACLE: $155.0000 – $185.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset APPLE: $200.0000 – $240.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset MICROSOFT: $370.0000 – $420.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset META: $520.0000 – $620.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset SP500: $5400.0000 – $5800.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset NASDAQ: $17000.0000 – $19000.0000
+2026-04-23 13:37:39 | INFO     | alert_engine | Added asset DOW: $41000.0000 – $44000.0000
+2026-04-23 13:37:39 | INFO     | main | Loaded 22 default price ranges
+2026-04-23 13:37:39 | INFO     | main | Starting all subsystems…
+2026-04-23 13:37:39 | INFO     | stock_fetcher | Stock/commodity poller started (interval=15s)
+2026-04-23 13:37:39 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:37:39 | INFO     | crypto_fetcher | Connecting to Binance WebSocket: 8 stream(s)
+2026-04-23 13:37:40 | INFO     | crypto_fetcher | Binance WebSocket connected ✓
+2026-04-23 13:37:40 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:40 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:41 | DEBUG    | crypto_fetcher |   WS BTC = $77547.1400
+2026-04-23 13:37:41 | DEBUG    | crypto_fetcher |   WS ETH = $2321.6100
+2026-04-23 13:37:41 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:41 | INFO     | alert_engine | 🔔 ALERT: BNB entered range [$580.0000 – $650.0000] at $634.6500
+2026-04-23 13:37:41 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:41 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:41 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:41 | ERROR    | telegram_bot | Failed to send Telegram message: Unauthorized
+2026-04-23 13:37:42 | DEBUG    | crypto_fetcher |   WS BTC = $77535.4800
+2026-04-23 13:37:42 | DEBUG    | crypto_fetcher |   WS ETH = $2321.5800
+2026-04-23 13:37:42 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:42 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:42 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4743.5000
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.0550
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9100
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.7150
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $380.2450
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.9600
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $254.9350
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.0450
+2026-04-23 13:37:42 | INFO     | alert_engine | 🔔 ALERT: ORACLE entered range [$155.0000 – $185.0000] at $180.0450
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.7350
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $421.5400
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   META (META) = $664.6400
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7123.9102
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24577.4551
+2026-04-23 13:37:42 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49304.9883
+2026-04-23 13:37:42 | ERROR    | telegram_bot | Failed to send Telegram message: Unauthorized
+2026-04-23 13:37:42 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:42 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:43 | DEBUG    | crypto_fetcher |   WS BTC = $77547.0500
+2026-04-23 13:37:43 | DEBUG    | crypto_fetcher |   WS ETH = $2321.6000
+2026-04-23 13:37:43 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:43 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:43 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:43 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:44 | DEBUG    | crypto_fetcher |   WS BTC = $77547.0500
+2026-04-23 13:37:44 | DEBUG    | crypto_fetcher |   WS ETH = $2321.6000
+2026-04-23 13:37:44 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:44 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:44 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:44 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:44 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:45 | DEBUG    | crypto_fetcher |   WS BTC = $77547.0400
+2026-04-23 13:37:45 | DEBUG    | crypto_fetcher |   WS ETH = $2321.6200
+2026-04-23 13:37:45 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:45 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:46 | DEBUG    | crypto_fetcher |   WS BTC = $77547.0500
+2026-04-23 13:37:46 | DEBUG    | crypto_fetcher |   WS ETH = $2321.6200
+2026-04-23 13:37:46 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:46 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:46 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:46 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:46 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:47 | DEBUG    | crypto_fetcher |   WS BTC = $77547.0500
+2026-04-23 13:37:47 | DEBUG    | crypto_fetcher |   WS ETH = $2321.6100
+2026-04-23 13:37:47 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:47 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:48 | DEBUG    | crypto_fetcher |   WS BTC = $77547.0500
+2026-04-23 13:37:48 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:37:48 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:48 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:48 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:48 | DEBUG    | crypto_fetcher |   WS SOL = $85.7400
+2026-04-23 13:37:49 | DEBUG    | crypto_fetcher |   WS BTC = $77554.8000
+2026-04-23 13:37:49 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:37:49 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:49 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:49 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:49 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:49 | DEBUG    | crypto_fetcher |   WS SOL = $85.7400
+2026-04-23 13:37:50 | DEBUG    | crypto_fetcher |   WS BTC = $77554.8000
+2026-04-23 13:37:50 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:37:50 | DEBUG    | crypto_fetcher |   WS BNB = $634.6500
+2026-04-23 13:37:50 | DEBUG    | crypto_fetcher |   WS XRP = $1.4152
+2026-04-23 13:37:50 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:51 | DEBUG    | crypto_fetcher |   WS BTC = $77561.4600
+2026-04-23 13:37:51 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:37:51 | DEBUG    | crypto_fetcher |   WS BNB = $634.6800
+2026-04-23 13:37:51 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:51 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:51 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:51 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:52 | DEBUG    | crypto_fetcher |   WS BTC = $77561.8100
+2026-04-23 13:37:52 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:37:52 | DEBUG    | crypto_fetcher |   WS BNB = $634.6800
+2026-04-23 13:37:52 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:52 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:52 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:53 | DEBUG    | crypto_fetcher |   WS BTC = $77561.8100
+2026-04-23 13:37:53 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:37:53 | DEBUG    | crypto_fetcher |   WS BNB = $634.6900
+2026-04-23 13:37:53 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:53 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:53 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:53 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:37:54 | DEBUG    | crypto_fetcher |   WS BTC = $77563.9900
+2026-04-23 13:37:54 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:37:54 | DEBUG    | crypto_fetcher |   WS BNB = $634.7100
+2026-04-23 13:37:54 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:55 | DEBUG    | crypto_fetcher |   WS BTC = $77563.9900
+2026-04-23 13:37:55 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:37:55 | DEBUG    | crypto_fetcher |   WS BNB = $634.7200
+2026-04-23 13:37:55 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:55 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:55 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:55 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:56 | DEBUG    | crypto_fetcher |   WS BTC = $77561.4600
+2026-04-23 13:37:56 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9500
+2026-04-23 13:37:56 | DEBUG    | crypto_fetcher |   WS BNB = $634.7200
+2026-04-23 13:37:56 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:56 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:56 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:37:57 | DEBUG    | crypto_fetcher |   WS BTC = $77561.4600
+2026-04-23 13:37:57 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9800
+2026-04-23 13:37:57 | DEBUG    | crypto_fetcher |   WS BNB = $634.7200
+2026-04-23 13:37:57 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:57 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:37:57 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:57 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:37:58 | DEBUG    | crypto_fetcher |   WS BTC = $77561.4700
+2026-04-23 13:37:58 | DEBUG    | crypto_fetcher |   WS ETH = $2322.1400
+2026-04-23 13:37:58 | DEBUG    | crypto_fetcher |   WS BNB = $634.7800
+2026-04-23 13:37:58 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:37:58 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:58 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:58 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4743.6001
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.0450
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9200
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.6100
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $380.6600
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.8150
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $254.9400
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.2600
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.9050
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $421.1300
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   META (META) = $664.8200
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7123.9600
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24574.9102
+2026-04-23 13:37:59 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49304.5586
+2026-04-23 13:37:59 | DEBUG    | crypto_fetcher |   WS BTC = $77561.4600
+2026-04-23 13:37:59 | DEBUG    | crypto_fetcher |   WS ETH = $2322.1000
+2026-04-23 13:37:59 | DEBUG    | crypto_fetcher |   WS BNB = $634.7900
+2026-04-23 13:37:59 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:37:59 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:37:59 | DEBUG    | crypto_fetcher |   WS SOL = $85.7400
+2026-04-23 13:38:00 | DEBUG    | crypto_fetcher |   WS BTC = $77560.4300
+2026-04-23 13:38:00 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9700
+2026-04-23 13:38:00 | DEBUG    | crypto_fetcher |   WS BNB = $634.7900
+2026-04-23 13:38:00 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:00 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:00 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:01 | DEBUG    | crypto_fetcher |   WS BTC = $77569.4200
+2026-04-23 13:38:01 | DEBUG    | crypto_fetcher |   WS ETH = $2322.1400
+2026-04-23 13:38:01 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:01 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:01 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:01 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:38:02 | DEBUG    | crypto_fetcher |   WS BTC = $77569.4200
+2026-04-23 13:38:02 | DEBUG    | crypto_fetcher |   WS ETH = $2322.1500
+2026-04-23 13:38:02 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:02 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:02 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:02 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:38:03 | DEBUG    | crypto_fetcher |   WS BTC = $77577.3400
+2026-04-23 13:38:03 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2900
+2026-04-23 13:38:03 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:38:03 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:03 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:03 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:04 | DEBUG    | crypto_fetcher |   WS BTC = $77579.9900
+2026-04-23 13:38:04 | DEBUG    | crypto_fetcher |   WS ETH = $2322.3000
+2026-04-23 13:38:04 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:38:04 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:04 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:04 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:05 | DEBUG    | crypto_fetcher |   WS BTC = $77576.0000
+2026-04-23 13:38:05 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2900
+2026-04-23 13:38:05 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:05 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:05 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:05 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:05 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:06 | DEBUG    | crypto_fetcher |   WS BTC = $77583.7500
+2026-04-23 13:38:06 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2900
+2026-04-23 13:38:06 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:06 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:06 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:06 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:07 | DEBUG    | crypto_fetcher |   WS BTC = $77583.7400
+2026-04-23 13:38:07 | DEBUG    | crypto_fetcher |   WS ETH = $2322.5900
+2026-04-23 13:38:07 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:07 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:07 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:08 | DEBUG    | crypto_fetcher |   WS BTC = $77583.7400
+2026-04-23 13:38:08 | DEBUG    | crypto_fetcher |   WS ETH = $2322.5900
+2026-04-23 13:38:08 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:08 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:08 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:08 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:09 | DEBUG    | crypto_fetcher |   WS BTC = $77576.0000
+2026-04-23 13:38:09 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2700
+2026-04-23 13:38:09 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:09 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:09 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:09 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:09 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:10 | DEBUG    | crypto_fetcher |   WS BTC = $77562.7100
+2026-04-23 13:38:10 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9100
+2026-04-23 13:38:10 | DEBUG    | crypto_fetcher |   WS BNB = $634.8000
+2026-04-23 13:38:10 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:10 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:10 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:11 | DEBUG    | crypto_fetcher |   WS BTC = $77562.0000
+2026-04-23 13:38:11 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:38:11 | DEBUG    | crypto_fetcher |   WS BNB = $634.8000
+2026-04-23 13:38:11 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:11 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:11 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:11 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:12 | DEBUG    | crypto_fetcher |   WS BTC = $77562.0100
+2026-04-23 13:38:12 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9100
+2026-04-23 13:38:12 | DEBUG    | crypto_fetcher |   WS BNB = $634.8000
+2026-04-23 13:38:12 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:13 | DEBUG    | crypto_fetcher |   WS BTC = $77562.0100
+2026-04-23 13:38:13 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0500
+2026-04-23 13:38:13 | DEBUG    | crypto_fetcher |   WS BNB = $634.8000
+2026-04-23 13:38:13 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:13 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:13 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:13 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:14 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:38:14 | DEBUG    | crypto_fetcher |   WS BTC = $77562.0000
+2026-04-23 13:38:14 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0500
+2026-04-23 13:38:14 | DEBUG    | crypto_fetcher |   WS BNB = $634.7900
+2026-04-23 13:38:14 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:15 | DEBUG    | crypto_fetcher |   WS BTC = $77562.0100
+2026-04-23 13:38:15 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0500
+2026-04-23 13:38:15 | DEBUG    | crypto_fetcher |   WS BNB = $634.7900
+2026-04-23 13:38:15 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4745.5000
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.1100
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9000
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.5600
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $381.0200
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.8300
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $254.7700
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.5350
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.6600
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $421.7400
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   META (META) = $664.9950
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7123.1401
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24574.4980
+2026-04-23 13:38:15 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49307.0703
+2026-04-23 13:38:15 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:15 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:16 | DEBUG    | crypto_fetcher |   WS BTC = $77562.0000
+2026-04-23 13:38:16 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0500
+2026-04-23 13:38:16 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:16 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:16 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:16 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:38:17 | DEBUG    | crypto_fetcher |   WS BTC = $77559.8800
+2026-04-23 13:38:17 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9100
+2026-04-23 13:38:17 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:17 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:17 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:17 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:18 | DEBUG    | crypto_fetcher |   WS BTC = $77559.8800
+2026-04-23 13:38:18 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:38:18 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:18 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:18 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:18 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:18 | DEBUG    | crypto_fetcher |   WS SOL = $85.7600
+2026-04-23 13:38:19 | DEBUG    | crypto_fetcher |   WS BTC = $77559.8800
+2026-04-23 13:38:19 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:38:19 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:19 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:19 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:19 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:20 | DEBUG    | crypto_fetcher |   WS BTC = $77559.8800
+2026-04-23 13:38:20 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:38:20 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:20 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:20 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:21 | DEBUG    | crypto_fetcher |   WS BTC = $77559.8800
+2026-04-23 13:38:21 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9000
+2026-04-23 13:38:21 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:21 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:21 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:22 | DEBUG    | crypto_fetcher |   WS BTC = $77559.8800
+2026-04-23 13:38:22 | DEBUG    | crypto_fetcher |   WS ETH = $2321.9100
+2026-04-23 13:38:22 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:22 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:22 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:22 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:38:23 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1500
+2026-04-23 13:38:23 | DEBUG    | crypto_fetcher |   WS ETH = $2322.3800
+2026-04-23 13:38:23 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:23 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:23 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:23 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:23 | DEBUG    | crypto_fetcher |   WS SOL = $85.7500
+2026-04-23 13:38:24 | DEBUG    | crypto_fetcher |   WS BTC = $77580.4200
+2026-04-23 13:38:24 | DEBUG    | crypto_fetcher |   WS ETH = $2322.4500
+2026-04-23 13:38:24 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:24 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:25 | DEBUG    | crypto_fetcher |   WS BTC = $77583.0000
+2026-04-23 13:38:25 | DEBUG    | crypto_fetcher |   WS ETH = $2322.6200
+2026-04-23 13:38:25 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:25 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:25 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:26 | DEBUG    | crypto_fetcher |   WS BTC = $77590.9700
+2026-04-23 13:38:26 | DEBUG    | crypto_fetcher |   WS ETH = $2322.6200
+2026-04-23 13:38:26 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:26 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:26 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:26 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:27 | DEBUG    | crypto_fetcher |   WS BTC = $77593.9900
+2026-04-23 13:38:27 | DEBUG    | crypto_fetcher |   WS ETH = $2322.7600
+2026-04-23 13:38:27 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:27 | DEBUG    | crypto_fetcher |   WS XRP = $1.4155
+2026-04-23 13:38:27 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:28 | DEBUG    | crypto_fetcher |   WS BTC = $77593.9900
+2026-04-23 13:38:28 | DEBUG    | crypto_fetcher |   WS ETH = $2322.7700
+2026-04-23 13:38:28 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:28 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:28 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:28 | DEBUG    | crypto_fetcher |   WS SOL = $85.7900
+2026-04-23 13:38:29 | DEBUG    | crypto_fetcher |   WS BTC = $77590.0000
+2026-04-23 13:38:29 | DEBUG    | crypto_fetcher |   WS ETH = $2322.7600
+2026-04-23 13:38:29 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:29 | DEBUG    | crypto_fetcher |   WS XRP = $1.4156
+2026-04-23 13:38:29 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:29 | INFO     | main | Shutdown signal received (15), stopping…
+2026-04-23 13:38:29 | INFO     | main | Saving state before shutdown…
+2026-04-23 13:38:29 | INFO     | persistence | State saved → state.json (22 assets)
+2026-04-23 13:38:29 | INFO     | main | Cancelling tasks…
+2026-04-23 13:38:35 | INFO     | main | ==================================================
+2026-04-23 13:38:35 | INFO     | main |   Multi-Asset Price Alert Bot
+2026-04-23 13:38:35 | INFO     | main |   Mode: LIVE
+2026-04-23 13:38:35 | INFO     | main | ==================================================
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset GOLD: $2900.0000 – $3200.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset SILVER: $30.0000 – $36.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset CRUDE_OIL: $65.0000 – $75.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset BTC: $80000.0000 – $95000.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset ETH: $1700.0000 – $2200.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset XRP: $2.0000 – $2.8000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset SOL: $120.0000 – $175.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset BNB: $580.0000 – $650.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset DOGE: $0.1500 – $0.2500
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset ADA: $0.6500 – $0.9000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset MATIC: $0.4000 – $0.6500
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset NVIDIA: $100.0000 – $135.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset TESLA: $240.0000 – $310.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset GOOGLE: $155.0000 – $185.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset AMAZON: $195.0000 – $225.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset ORACLE: $155.0000 – $185.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset APPLE: $200.0000 – $240.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset MICROSOFT: $370.0000 – $420.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset META: $520.0000 – $620.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset SP500: $5400.0000 – $5800.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset NASDAQ: $17000.0000 – $19000.0000
+2026-04-23 13:38:35 | INFO     | alert_engine | Added asset DOW: $41000.0000 – $44000.0000
+2026-04-23 13:38:35 | INFO     | persistence | Restored 22 asset(s) from state.json
+2026-04-23 13:38:35 | INFO     | main | Starting all subsystems…
+2026-04-23 13:38:35 | INFO     | stock_fetcher | Stock/commodity poller started (interval=15s)
+2026-04-23 13:38:35 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:38:35 | INFO     | crypto_fetcher | Connecting to Binance WebSocket: 8 stream(s)
+2026-04-23 13:38:35 | INFO     | crypto_fetcher | Binance WebSocket connected ✓
+2026-04-23 13:38:35 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:36 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1500
+2026-04-23 13:38:36 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0700
+2026-04-23 13:38:36 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:36 | INFO     | alert_engine | 🔔 ALERT: BNB entered range [$580.0000 – $650.0000] at $634.9200
+2026-04-23 13:38:36 | ERROR    | main | Failed to dispatch alert: 'AlertEvent' object has no attribute 'condition'
+2026-04-23 13:38:36 | INFO     | main | Bot stopped. Goodbye! 👋
+2026-04-23 13:38:36 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:37 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1500
+2026-04-23 13:38:37 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0700
+2026-04-23 13:38:37 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:38:37 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:37 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:37 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:38 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1500
+2026-04-23 13:38:38 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0700
+2026-04-23 13:38:38 | DEBUG    | crypto_fetcher |   WS BNB = $634.8500
+2026-04-23 13:38:38 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:38 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4745.6001
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.0950
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9000
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.6700
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $382.0000
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.4800
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $254.7900
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.5401
+2026-04-23 13:38:38 | INFO     | alert_engine | 🔔 ALERT: ORACLE entered range [$155.0000 – $185.0000] at $180.5401
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.4800
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $421.2700
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   META (META) = $664.2950
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7122.8999
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24578.5098
+2026-04-23 13:38:38 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49286.9492
+2026-04-23 13:38:38 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:38 | ERROR    | main | Failed to dispatch alert: 'AlertEvent' object has no attribute 'condition'
+2026-04-23 13:38:38 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:39 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1400
+2026-04-23 13:38:39 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0700
+2026-04-23 13:38:39 | DEBUG    | crypto_fetcher |   WS BNB = $634.8400
+2026-04-23 13:38:39 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:39 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:39 | DEBUG    | crypto_fetcher |   WS SOL = $85.7700
+2026-04-23 13:38:40 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1400
+2026-04-23 13:38:40 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0700
+2026-04-23 13:38:40 | DEBUG    | crypto_fetcher |   WS BNB = $634.8500
+2026-04-23 13:38:40 | DEBUG    | crypto_fetcher |   WS ADA = $0.2473
+2026-04-23 13:38:40 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:40 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:40 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:41 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1500
+2026-04-23 13:38:41 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:38:41 | DEBUG    | crypto_fetcher |   WS BNB = $634.8500
+2026-04-23 13:38:41 | DEBUG    | crypto_fetcher |   WS SOL = $85.7800
+2026-04-23 13:38:42 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1500
+2026-04-23 13:38:42 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:38:42 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:42 | DEBUG    | crypto_fetcher |   WS SOL = $85.7700
+2026-04-23 13:38:43 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1500
+2026-04-23 13:38:43 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:38:43 | DEBUG    | crypto_fetcher |   WS BNB = $634.8500
+2026-04-23 13:38:43 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:43 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:43 | DEBUG    | crypto_fetcher |   WS SOL = $85.7700
+2026-04-23 13:38:44 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1400
+2026-04-23 13:38:44 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:38:44 | DEBUG    | crypto_fetcher |   WS BNB = $634.8500
+2026-04-23 13:38:44 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:38:44 | DEBUG    | crypto_fetcher |   WS XRP = $1.4153
+2026-04-23 13:38:44 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:44 | DEBUG    | crypto_fetcher |   WS SOL = $85.7700
+2026-04-23 13:38:45 | DEBUG    | crypto_fetcher |   WS BTC = $77570.1400
+2026-04-23 13:38:45 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0600
+2026-04-23 13:38:45 | DEBUG    | crypto_fetcher |   WS BNB = $634.8500
+2026-04-23 13:38:45 | DEBUG    | crypto_fetcher |   WS XRP = $1.4154
+2026-04-23 13:38:45 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:45 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:38:46 | DEBUG    | crypto_fetcher |   WS BTC = $77590.0000
+2026-04-23 13:38:46 | DEBUG    | crypto_fetcher |   WS ETH = $2322.5500
+2026-04-23 13:38:46 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:46 | DEBUG    | crypto_fetcher |   WS XRP = $1.4156
+2026-04-23 13:38:46 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:46 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:38:47 | DEBUG    | crypto_fetcher |   WS BTC = $77590.0000
+2026-04-23 13:38:47 | DEBUG    | crypto_fetcher |   WS ETH = $2322.9300
+2026-04-23 13:38:47 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:38:47 | DEBUG    | crypto_fetcher |   WS XRP = $1.4156
+2026-04-23 13:38:47 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:47 | DEBUG    | crypto_fetcher |   WS SOL = $85.7900
+2026-04-23 13:38:48 | DEBUG    | crypto_fetcher |   WS BTC = $77600.0500
+2026-04-23 13:38:48 | DEBUG    | crypto_fetcher |   WS ETH = $2322.9300
+2026-04-23 13:38:48 | DEBUG    | crypto_fetcher |   WS BNB = $634.9200
+2026-04-23 13:38:48 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:38:48 | DEBUG    | crypto_fetcher |   WS XRP = $1.4157
+2026-04-23 13:38:48 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:48 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:38:49 | DEBUG    | crypto_fetcher |   WS BTC = $77600.0500
+2026-04-23 13:38:49 | DEBUG    | crypto_fetcher |   WS ETH = $2322.9300
+2026-04-23 13:38:49 | DEBUG    | crypto_fetcher |   WS BNB = $634.9500
+2026-04-23 13:38:49 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:38:49 | DEBUG    | crypto_fetcher |   WS XRP = $1.4159
+2026-04-23 13:38:49 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:49 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:38:50 | DEBUG    | crypto_fetcher |   WS BTC = $77617.2200
+2026-04-23 13:38:50 | DEBUG    | crypto_fetcher |   WS ETH = $2323.3700
+2026-04-23 13:38:50 | DEBUG    | crypto_fetcher |   WS BNB = $635.0100
+2026-04-23 13:38:50 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:38:50 | DEBUG    | crypto_fetcher |   WS XRP = $1.4160
+2026-04-23 13:38:50 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:50 | DEBUG    | crypto_fetcher |   WS SOL = $85.8300
+2026-04-23 13:38:51 | DEBUG    | crypto_fetcher |   WS BTC = $77618.5600
+2026-04-23 13:38:51 | DEBUG    | crypto_fetcher |   WS ETH = $2323.5600
+2026-04-23 13:38:51 | DEBUG    | crypto_fetcher |   WS BNB = $635.0800
+2026-04-23 13:38:51 | DEBUG    | crypto_fetcher |   WS ADA = $0.2475
+2026-04-23 13:38:51 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:51 | DEBUG    | crypto_fetcher |   WS SOL = $85.8400
+2026-04-23 13:38:52 | DEBUG    | crypto_fetcher |   WS BTC = $77630.3500
+2026-04-23 13:38:52 | DEBUG    | crypto_fetcher |   WS ETH = $2323.6500
+2026-04-23 13:38:52 | DEBUG    | crypto_fetcher |   WS XRP = $1.4161
+2026-04-23 13:38:52 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:52 | DEBUG    | crypto_fetcher |   WS SOL = $85.8300
+2026-04-23 13:38:53 | DEBUG    | crypto_fetcher |   WS BTC = $77630.4800
+2026-04-23 13:38:53 | DEBUG    | crypto_fetcher |   WS ETH = $2323.9900
+2026-04-23 13:38:53 | DEBUG    | crypto_fetcher |   WS BNB = $635.1000
+2026-04-23 13:38:53 | DEBUG    | crypto_fetcher |   WS ADA = $0.2475
+2026-04-23 13:38:53 | DEBUG    | crypto_fetcher |   WS XRP = $1.4162
+2026-04-23 13:38:53 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:53 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:38:53 | DEBUG    | crypto_fetcher |   WS SOL = $85.8500
+2026-04-23 13:38:54 | DEBUG    | crypto_fetcher |   WS BTC = $77644.0000
+2026-04-23 13:38:54 | DEBUG    | crypto_fetcher |   WS ETH = $2324.2100
+2026-04-23 13:38:54 | DEBUG    | crypto_fetcher |   WS BNB = $635.1200
+2026-04-23 13:38:54 | DEBUG    | crypto_fetcher |   WS ADA = $0.2475
+2026-04-23 13:38:54 | DEBUG    | crypto_fetcher |   WS XRP = $1.4162
+2026-04-23 13:38:54 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:54 | DEBUG    | crypto_fetcher |   WS SOL = $85.8600
+2026-04-23 13:38:55 | DEBUG    | crypto_fetcher |   WS BTC = $77651.7400
+2026-04-23 13:38:55 | DEBUG    | crypto_fetcher |   WS ETH = $2324.6300
+2026-04-23 13:38:55 | DEBUG    | crypto_fetcher |   WS BNB = $635.3200
+2026-04-23 13:38:55 | DEBUG    | crypto_fetcher |   WS XRP = $1.4165
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4744.6001
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.0300
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9000
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.7950
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $383.2201
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.7750
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $254.8200
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.2950
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.7800
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $421.5900
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   META (META) = $664.6500
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7125.3198
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24584.3887
+2026-04-23 13:38:55 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49282.7188
+2026-04-23 13:38:55 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:55 | DEBUG    | crypto_fetcher |   WS SOL = $85.8700
+2026-04-23 13:38:56 | DEBUG    | crypto_fetcher |   WS BTC = $77667.9200
+2026-04-23 13:38:56 | DEBUG    | crypto_fetcher |   WS ETH = $2324.8800
+2026-04-23 13:38:56 | DEBUG    | crypto_fetcher |   WS XRP = $1.4165
+2026-04-23 13:38:56 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:57 | DEBUG    | crypto_fetcher |   WS BTC = $77657.5200
+2026-04-23 13:38:57 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5300
+2026-04-23 13:38:57 | DEBUG    | crypto_fetcher |   WS BNB = $635.3200
+2026-04-23 13:38:57 | DEBUG    | crypto_fetcher |   WS ADA = $0.2475
+2026-04-23 13:38:57 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:38:57 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:57 | DEBUG    | crypto_fetcher |   WS SOL = $85.8700
+2026-04-23 13:38:58 | DEBUG    | crypto_fetcher |   WS BTC = $77656.2100
+2026-04-23 13:38:58 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5400
+2026-04-23 13:38:58 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:38:58 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:38:59 | DEBUG    | crypto_fetcher |   WS BTC = $77656.2100
+2026-04-23 13:38:59 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5400
+2026-04-23 13:38:59 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:38:59 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:38:59 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:38:59 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:00 | DEBUG    | crypto_fetcher |   WS BTC = $77656.2100
+2026-04-23 13:39:00 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5300
+2026-04-23 13:39:00 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:39:00 | DEBUG    | crypto_fetcher |   WS ADA = $0.2475
+2026-04-23 13:39:00 | DEBUG    | crypto_fetcher |   WS XRP = $1.4165
+2026-04-23 13:39:00 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:00 | DEBUG    | crypto_fetcher |   WS SOL = $85.8700
+2026-04-23 13:39:01 | DEBUG    | crypto_fetcher |   WS BTC = $77656.2100
+2026-04-23 13:39:01 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5200
+2026-04-23 13:39:01 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:39:01 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:01 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:02 | DEBUG    | crypto_fetcher |   WS BTC = $77652.3700
+2026-04-23 13:39:02 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5200
+2026-04-23 13:39:02 | DEBUG    | crypto_fetcher |   WS BNB = $635.3000
+2026-04-23 13:39:02 | DEBUG    | crypto_fetcher |   WS ADA = $0.2476
+2026-04-23 13:39:02 | DEBUG    | crypto_fetcher |   WS XRP = $1.4165
+2026-04-23 13:39:02 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:02 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:03 | DEBUG    | crypto_fetcher |   WS BTC = $77652.1900
+2026-04-23 13:39:03 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5300
+2026-04-23 13:39:03 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:39:03 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:03 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:03 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:04 | DEBUG    | crypto_fetcher |   WS BTC = $77652.1800
+2026-04-23 13:39:04 | DEBUG    | crypto_fetcher |   WS ETH = $2324.5300
+2026-04-23 13:39:04 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:39:04 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:04 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:04 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:05 | DEBUG    | crypto_fetcher |   WS BTC = $77652.1800
+2026-04-23 13:39:05 | DEBUG    | crypto_fetcher |   WS ETH = $2324.6400
+2026-04-23 13:39:05 | DEBUG    | crypto_fetcher |   WS ADA = $0.2476
+2026-04-23 13:39:05 | DEBUG    | crypto_fetcher |   WS XRP = $1.4168
+2026-04-23 13:39:05 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:05 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:06 | DEBUG    | crypto_fetcher |   WS BTC = $77652.1800
+2026-04-23 13:39:06 | DEBUG    | crypto_fetcher |   WS ETH = $2324.6400
+2026-04-23 13:39:06 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:39:06 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0963
+2026-04-23 13:39:06 | DEBUG    | crypto_fetcher |   WS SOL = $85.8900
+2026-04-23 13:39:07 | DEBUG    | crypto_fetcher |   WS BTC = $77656.2000
+2026-04-23 13:39:07 | DEBUG    | crypto_fetcher |   WS ETH = $2324.8800
+2026-04-23 13:39:07 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:39:07 | DEBUG    | crypto_fetcher |   WS ADA = $0.2476
+2026-04-23 13:39:07 | DEBUG    | crypto_fetcher |   WS XRP = $1.4170
+2026-04-23 13:39:07 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0963
+2026-04-23 13:39:07 | DEBUG    | crypto_fetcher |   WS SOL = $85.8900
+2026-04-23 13:39:08 | DEBUG    | crypto_fetcher |   WS BTC = $77646.4100
+2026-04-23 13:39:08 | DEBUG    | crypto_fetcher |   WS ETH = $2324.6900
+2026-04-23 13:39:08 | DEBUG    | crypto_fetcher |   WS BNB = $635.3100
+2026-04-23 13:39:08 | DEBUG    | crypto_fetcher |   WS XRP = $1.4170
+2026-04-23 13:39:08 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0963
+2026-04-23 13:39:08 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:09 | DEBUG    | crypto_fetcher |   WS BTC = $77638.0000
+2026-04-23 13:39:09 | DEBUG    | crypto_fetcher |   WS ETH = $2324.1600
+2026-04-23 13:39:09 | DEBUG    | crypto_fetcher |   WS BNB = $635.2500
+2026-04-23 13:39:09 | DEBUG    | crypto_fetcher |   WS ADA = $0.2476
+2026-04-23 13:39:09 | DEBUG    | crypto_fetcher |   WS XRP = $1.4169
+2026-04-23 13:39:09 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0963
+2026-04-23 13:39:09 | DEBUG    | crypto_fetcher |   WS SOL = $85.8800
+2026-04-23 13:39:10 | DEBUG    | crypto_fetcher |   WS BTC = $77631.4400
+2026-04-23 13:39:10 | DEBUG    | crypto_fetcher |   WS ETH = $2324.1600
+2026-04-23 13:39:10 | DEBUG    | crypto_fetcher |   WS BNB = $635.2100
+2026-04-23 13:39:10 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:39:10 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:10 | DEBUG    | crypto_fetcher |   WS SOL = $85.8700
+2026-04-23 13:39:11 | DEBUG    | crypto_fetcher |   WS BTC = $77623.0000
+2026-04-23 13:39:11 | DEBUG    | crypto_fetcher |   WS ETH = $2323.5900
+2026-04-23 13:39:11 | INFO     | main | Shutdown signal received (15), stopping…
+2026-04-23 13:39:11 | INFO     | main | Saving state before shutdown…
+2026-04-23 13:39:11 | INFO     | persistence | State saved → state.json (22 assets)
+2026-04-23 13:39:11 | INFO     | main | Cancelling tasks…
+2026-04-23 13:39:16 | INFO     | main | ==================================================
+2026-04-23 13:39:16 | INFO     | main |   Multi-Asset Price Alert Bot
+2026-04-23 13:39:16 | INFO     | main |   Mode: LIVE
+2026-04-23 13:39:16 | INFO     | main | ==================================================
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset GOLD: $2900.0000 – $3200.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset SILVER: $30.0000 – $36.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset CRUDE_OIL: $65.0000 – $75.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset BTC: $80000.0000 – $95000.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset ETH: $1700.0000 – $2200.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset XRP: $2.0000 – $2.8000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset SOL: $120.0000 – $175.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset BNB: $580.0000 – $650.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset DOGE: $0.1500 – $0.2500
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset ADA: $0.6500 – $0.9000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset MATIC: $0.4000 – $0.6500
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset NVIDIA: $100.0000 – $135.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset TESLA: $240.0000 – $310.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset GOOGLE: $155.0000 – $185.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset AMAZON: $195.0000 – $225.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset ORACLE: $155.0000 – $185.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset APPLE: $200.0000 – $240.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset MICROSOFT: $370.0000 – $420.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset META: $520.0000 – $620.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset SP500: $5400.0000 – $5800.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset NASDAQ: $17000.0000 – $19000.0000
+2026-04-23 13:39:16 | INFO     | alert_engine | Added asset DOW: $41000.0000 – $44000.0000
+2026-04-23 13:39:16 | INFO     | persistence | Restored 22 asset(s) from state.json
+2026-04-23 13:39:16 | INFO     | main | Starting all subsystems…
+2026-04-23 13:39:16 | INFO     | stock_fetcher | Stock/commodity poller started (interval=15s)
+2026-04-23 13:39:16 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:39:16 | INFO     | crypto_fetcher | Connecting to Binance WebSocket: 8 stream(s)
+2026-04-23 13:39:16 | INFO     | crypto_fetcher | Binance WebSocket connected ✓
+2026-04-23 13:39:17 | DEBUG    | crypto_fetcher |   WS BTC = $77610.0100
+2026-04-23 13:39:17 | DEBUG    | crypto_fetcher |   WS ETH = $2323.1500
+2026-04-23 13:39:17 | DEBUG    | crypto_fetcher |   WS BNB = $635.0900
+2026-04-23 13:39:17 | INFO     | alert_engine | 🔔 ALERT: BNB entered range [$580.0000 – $650.0000] at $635.0900
+2026-04-23 13:39:17 | INFO     | discord | Discord alert sent for BNB
+2026-04-23 13:39:17 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:17 | DEBUG    | crypto_fetcher |   WS SOL = $85.8500
+2026-04-23 13:39:17 | ERROR    | telegram_bot | Failed to send Telegram message: Unauthorized
+2026-04-23 13:39:18 | DEBUG    | crypto_fetcher |   WS BTC = $77608.6800
+2026-04-23 13:39:18 | DEBUG    | crypto_fetcher |   WS ETH = $2322.9600
+2026-04-23 13:39:18 | INFO     | main | Bot stopped. Goodbye! 👋
+2026-04-23 13:39:18 | DEBUG    | crypto_fetcher |   WS BNB = $635.0800
+2026-04-23 13:39:18 | DEBUG    | crypto_fetcher |   WS ADA = $0.2475
+2026-04-23 13:39:18 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:18 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:18 | DEBUG    | crypto_fetcher |   WS SOL = $85.8400
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4744.5000
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.0150
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9400
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.7200
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $382.7400
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.9100
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $254.8650
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.1400
+2026-04-23 13:39:19 | INFO     | alert_engine | 🔔 ALERT: ORACLE entered range [$155.0000 – $185.0000] at $180.1400
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.8100
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $421.1562
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   META (META) = $664.6750
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7125.9502
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24586.5879
+2026-04-23 13:39:19 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49306.8594
+2026-04-23 13:39:19 | INFO     | discord | Discord alert sent for ORACLE
+2026-04-23 13:39:19 | DEBUG    | crypto_fetcher |   WS BTC = $77596.5900
+2026-04-23 13:39:19 | DEBUG    | crypto_fetcher |   WS ETH = $2322.7000
+2026-04-23 13:39:19 | DEBUG    | crypto_fetcher |   WS BNB = $635.0500
+2026-04-23 13:39:19 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:39:19 | DEBUG    | crypto_fetcher |   WS XRP = $1.4165
+2026-04-23 13:39:19 | ERROR    | telegram_bot | Failed to send Telegram message: Unauthorized
+2026-04-23 13:39:19 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:19 | DEBUG    | crypto_fetcher |   WS SOL = $85.8400
+2026-04-23 13:39:20 | DEBUG    | crypto_fetcher |   WS BTC = $77586.9000
+2026-04-23 13:39:20 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2700
+2026-04-23 13:39:20 | DEBUG    | crypto_fetcher |   WS BNB = $635.0500
+2026-04-23 13:39:20 | DEBUG    | crypto_fetcher |   WS XRP = $1.4164
+2026-04-23 13:39:20 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:20 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:21 | DEBUG    | crypto_fetcher |   WS BTC = $77586.9000
+2026-04-23 13:39:21 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2800
+2026-04-23 13:39:21 | DEBUG    | crypto_fetcher |   WS BNB = $634.9800
+2026-04-23 13:39:21 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:21 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:22 | DEBUG    | crypto_fetcher |   WS BTC = $77586.8900
+2026-04-23 13:39:22 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2700
+2026-04-23 13:39:22 | DEBUG    | crypto_fetcher |   WS BNB = $634.9900
+2026-04-23 13:39:22 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:39:22 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:22 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:22 | DEBUG    | crypto_fetcher |   WS SOL = $85.8300
+2026-04-23 13:39:23 | DEBUG    | crypto_fetcher |   WS BTC = $77586.9000
+2026-04-23 13:39:23 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2700
+2026-04-23 13:39:23 | DEBUG    | crypto_fetcher |   WS BNB = $634.9900
+2026-04-23 13:39:23 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:23 | DEBUG    | crypto_fetcher |   WS SOL = $85.8300
+2026-04-23 13:39:24 | DEBUG    | crypto_fetcher |   WS BTC = $77586.9000
+2026-04-23 13:39:24 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2700
+2026-04-23 13:39:24 | DEBUG    | crypto_fetcher |   WS BNB = $634.9900
+2026-04-23 13:39:24 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:24 | DEBUG    | crypto_fetcher |   WS SOL = $85.8300
+2026-04-23 13:39:25 | DEBUG    | crypto_fetcher |   WS BTC = $77586.8900
+2026-04-23 13:39:25 | DEBUG    | crypto_fetcher |   WS ETH = $2322.2700
+2026-04-23 13:39:25 | DEBUG    | crypto_fetcher |   WS BNB = $634.9900
+2026-04-23 13:39:25 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:25 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:25 | DEBUG    | crypto_fetcher |   WS SOL = $85.8300
+2026-04-23 13:39:26 | DEBUG    | crypto_fetcher |   WS BTC = $77593.9300
+2026-04-23 13:39:26 | DEBUG    | crypto_fetcher |   WS ETH = $2322.3600
+2026-04-23 13:39:26 | DEBUG    | crypto_fetcher |   WS BNB = $634.9900
+2026-04-23 13:39:26 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:26 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:26 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:27 | DEBUG    | crypto_fetcher |   WS BTC = $77593.9300
+2026-04-23 13:39:27 | DEBUG    | crypto_fetcher |   WS ETH = $2322.3600
+2026-04-23 13:39:27 | DEBUG    | crypto_fetcher |   WS BNB = $634.9800
+2026-04-23 13:39:27 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:27 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:28 | DEBUG    | crypto_fetcher |   WS BTC = $77593.9400
+2026-04-23 13:39:28 | DEBUG    | crypto_fetcher |   WS ETH = $2322.3600
+2026-04-23 13:39:28 | DEBUG    | crypto_fetcher |   WS BNB = $634.9800
+2026-04-23 13:39:28 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:28 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:29 | DEBUG    | crypto_fetcher |   WS BTC = $77580.0100
+2026-04-23 13:39:29 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0000
+2026-04-23 13:39:29 | DEBUG    | crypto_fetcher |   WS BNB = $634.9400
+2026-04-23 13:39:29 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:29 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:29 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:30 | DEBUG    | crypto_fetcher |   WS BTC = $77578.0700
+2026-04-23 13:39:30 | DEBUG    | crypto_fetcher |   WS ETH = $2321.8100
+2026-04-23 13:39:30 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:39:30 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:30 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:31 | DEBUG    | crypto_fetcher |   WS BTC = $77576.1700
+2026-04-23 13:39:31 | DEBUG    | crypto_fetcher |   WS ETH = $2321.8100
+2026-04-23 13:39:31 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:39:31 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:31 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:31 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:32 | DEBUG    | crypto_fetcher |   WS BTC = $77576.1600
+2026-04-23 13:39:32 | DEBUG    | crypto_fetcher |   WS ETH = $2321.8200
+2026-04-23 13:39:32 | DEBUG    | crypto_fetcher |   WS ADA = $0.2475
+2026-04-23 13:39:32 | DEBUG    | crypto_fetcher |   WS SOL = $85.8100
+2026-04-23 13:39:33 | DEBUG    | crypto_fetcher |   WS BTC = $77576.1700
+2026-04-23 13:39:33 | DEBUG    | crypto_fetcher |   WS ETH = $2321.8100
+2026-04-23 13:39:33 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:33 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:33 | DEBUG    | crypto_fetcher |   WS SOL = $85.8100
+2026-04-23 13:39:34 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:39:34 | DEBUG    | crypto_fetcher |   WS BTC = $77576.1600
+2026-04-23 13:39:34 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0100
+2026-04-23 13:39:34 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:34 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:34 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:34 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:35 | DEBUG    | crypto_fetcher |   WS BTC = $77576.1600
+2026-04-23 13:39:35 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0100
+2026-04-23 13:39:35 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:39:35 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4745.2002
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.0400
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9800
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.7200
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $382.7950
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.7400
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $254.8600
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.0450
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.7222
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $420.9200
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   META (META) = $665.0200
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7125.9102
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24583.8359
+2026-04-23 13:39:35 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49312.3594
+2026-04-23 13:39:36 | DEBUG    | crypto_fetcher |   WS BTC = $77576.1700
+2026-04-23 13:39:36 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0000
+2026-04-23 13:39:36 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:39:36 | DEBUG    | crypto_fetcher |   WS XRP = $1.4164
+2026-04-23 13:39:36 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:37 | DEBUG    | crypto_fetcher |   WS BTC = $77581.4000
+2026-04-23 13:39:37 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0300
+2026-04-23 13:39:37 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:37 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:37 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:38 | DEBUG    | crypto_fetcher |   WS BTC = $77581.4100
+2026-04-23 13:39:38 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0200
+2026-04-23 13:39:38 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:39 | DEBUG    | crypto_fetcher |   WS BTC = $77575.9900
+2026-04-23 13:39:39 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0300
+2026-04-23 13:39:39 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:39 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:39:39 | DEBUG    | crypto_fetcher |   WS XRP = $1.4164
+2026-04-23 13:39:39 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:39 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:40 | DEBUG    | crypto_fetcher |   WS BTC = $77573.2100
+2026-04-23 13:39:40 | DEBUG    | crypto_fetcher |   WS ETH = $2321.8600
+2026-04-23 13:39:40 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:41 | DEBUG    | crypto_fetcher |   WS BTC = $77573.2100
+2026-04-23 13:39:41 | DEBUG    | crypto_fetcher |   WS ETH = $2321.8600
+2026-04-23 13:39:41 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:41 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:41 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:42 | DEBUG    | crypto_fetcher |   WS BTC = $77578.2000
+2026-04-23 13:39:42 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0200
+2026-04-23 13:39:42 | DEBUG    | crypto_fetcher |   WS BNB = $634.8600
+2026-04-23 13:39:42 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:42 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:43 | DEBUG    | crypto_fetcher |   WS BTC = $77578.2100
+2026-04-23 13:39:43 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0300
+2026-04-23 13:39:43 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:43 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:43 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:43 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:44 | DEBUG    | crypto_fetcher |   WS BTC = $77578.2100
+2026-04-23 13:39:44 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0200
+2026-04-23 13:39:44 | DEBUG    | crypto_fetcher |   WS BNB = $634.8600
+2026-04-23 13:39:44 | DEBUG    | crypto_fetcher |   WS XRP = $1.4163
+2026-04-23 13:39:44 | DEBUG    | crypto_fetcher |   WS SOL = $85.8000
+2026-04-23 13:39:45 | DEBUG    | crypto_fetcher |   WS BTC = $77578.2100
+2026-04-23 13:39:45 | DEBUG    | crypto_fetcher |   WS ETH = $2322.0200
+2026-04-23 13:39:45 | DEBUG    | crypto_fetcher |   WS BNB = $634.8700
+2026-04-23 13:39:45 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:45 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:45 | DEBUG    | crypto_fetcher |   WS SOL = $85.8100
+2026-04-23 13:39:46 | DEBUG    | crypto_fetcher |   WS BTC = $77605.3900
+2026-04-23 13:39:46 | DEBUG    | crypto_fetcher |   WS ETH = $2322.8000
+2026-04-23 13:39:46 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:39:46 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:47 | DEBUG    | crypto_fetcher |   WS BTC = $77605.3900
+2026-04-23 13:39:47 | DEBUG    | crypto_fetcher |   WS ETH = $2322.8000
+2026-04-23 13:39:47 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:47 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:47 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:48 | DEBUG    | crypto_fetcher |   WS BTC = $77605.3900
+2026-04-23 13:39:48 | DEBUG    | crypto_fetcher |   WS ETH = $2322.4800
+2026-04-23 13:39:48 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:39:48 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:48 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:49 | DEBUG    | crypto_fetcher |   WS BTC = $77605.3900
+2026-04-23 13:39:49 | DEBUG    | crypto_fetcher |   WS ETH = $2322.4800
+2026-04-23 13:39:49 | DEBUG    | crypto_fetcher |   WS BNB = $634.8800
+2026-04-23 13:39:49 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:49 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:49 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:50 | DEBUG    | crypto_fetcher |   WS BTC = $77605.4000
+2026-04-23 13:39:50 | DEBUG    | crypto_fetcher |   WS ETH = $2322.4900
+2026-04-23 13:39:50 | DEBUG    | crypto_fetcher |   WS BNB = $634.9100
+2026-04-23 13:39:50 | DEBUG    | crypto_fetcher |   WS ADA = $0.2474
+2026-04-23 13:39:50 | DEBUG    | crypto_fetcher |   WS XRP = $1.4166
+2026-04-23 13:39:50 | DEBUG    | stock_fetcher | Fetching yfinance tickers: GC=F SI=F CL=F NVDA TSLA GOOGL AMZN ORCL AAPL MSFT META ^GSPC ^IXIC ^DJI
+2026-04-23 13:39:50 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:50 | DEBUG    | crypto_fetcher |   WS SOL = $85.8200
+2026-04-23 13:39:51 | DEBUG    | crypto_fetcher |   WS BTC = $77607.2100
+2026-04-23 13:39:51 | DEBUG    | crypto_fetcher |   WS ETH = $2322.7900
+2026-04-23 13:39:51 | DEBUG    | crypto_fetcher |   WS BNB = $634.9100
+2026-04-23 13:39:51 | DEBUG    | crypto_fetcher |   WS DOGE = $0.0962
+2026-04-23 13:39:52 | DEBUG    | crypto_fetcher |   WS BTC = $77607.2100
+2026-04-23 13:39:52 | DEBUG    | crypto_fetcher |   WS ETH = $2322.6500
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   GOLD (GC=F) = $4745.6001
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   SILVER (SI=F) = $76.0750
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   CRUDE_OIL (CL=F) = $93.9700
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   NVIDIA (NVDA) = $201.8400
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   TESLA (TSLA) = $383.1908
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   GOOGLE (GOOGL) = $338.6300
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   AMAZON (AMZN) = $255.3012
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   ORACLE (ORCL) = $180.2000
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   APPLE (AAPL) = $274.5400
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   MICROSOFT (MSFT) = $421.2500
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   META (META) = $665.2800
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   SP500 (^GSPC) = $7127.6099
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   NASDAQ (^IXIC) = $24588.9766
+2026-04-23 13:39:52 | DEBUG    | stock_fetcher |   DOW (^DJI) = $49315.1211
+2026-04-23 13:39:52 | DEBUG    | crypto_fetcher |   WS XRP = $1.4167
