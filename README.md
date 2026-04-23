@@ -1,13 +1,3 @@
----
-title: Assets Tracker
-emoji: 📈
-colorFrom: blue
-colorTo: purple
-sdk: gradio
-sdk_version: "4.44.0"
-app_file: app.py
-pinned: false
----
 # Multi-Asset Real-Time Price Alert Bot 📈🔔
 
 A production-ready Python bot that monitors **commodities**, **cryptocurrencies**, and **stocks** in real-time, and sends instant **Telegram alerts** when prices enter your defined ranges.
