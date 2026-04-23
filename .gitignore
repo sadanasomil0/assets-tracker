@@ -1,12 +1,12 @@
 ```
-# Environment files
+# Logs and temp files
+*.log
+
+# Environment
 .env
 .env.local
 *.env.*
 
-# Log files
-*.log
-
-# State/persistent data
+# State files
 state.json
 ```

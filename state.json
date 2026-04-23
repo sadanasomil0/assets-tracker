@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "name": "GOLD",
+      "min_price": 2900.0,
+      "max_price": 3200.0
+    },
+    {
+      "name": "SILVER",
+      "min_price": 30.0,
+      "max_price": 36.0
+    },
+    {
+      "name": "CRUDE_OIL",
+      "min_price": 65.0,
+      "max_price": 75.0
+    },
+    {
+      "name": "BTC",
+      "min_price": 80000.0,
+      "max_price": 95000.0
+    },
+    {
+      "name": "ETH",
+      "min_price": 1700.0,
+      "max_price": 2200.0
+    },
+    {
+      "name": "XRP",
+      "min_price": 2.0,
+      "max_price": 2.8
+    },
+    {
+      "name": "SOL",
+      "min_price": 120.0,
+      "max_price": 175.0
+    },
+    {
+      "name": "BNB",
+      "min_price": 580.0,
+      "max_price": 650.0
+    },
+    {
+      "name": "DOGE",
+      "min_price": 0.15,
+      "max_price": 0.25
+    },
+    {
+      "name": "ADA",
+      "min_price": 0.65,
+      "max_price": 0.9
+    },
+    {
+      "name": "MATIC",
+      "min_price": 0.4,
+      "max_price": 0.65
+    },
+    {
+      "name": "NVIDIA",
+      "min_price": 100.0,
+      "max_price": 135.0
+    },
+    {
+      "name": "TESLA",
+      "min_price": 240.0,
+      "max_price": 310.0
+    },
+    {
+      "name": "GOOGLE",
+      "min_price": 155.0,
+      "max_price": 185.0
+    },
+    {
+      "name": "AMAZON",
+      "min_price": 195.0,
+      "max_price": 225.0
+    },
+    {
+      "name": "ORACLE",
+      "min_price": 155.0,
+      "max_price": 185.0
+    },
+    {
+      "name": "APPLE",
+      "min_price": 200.0,
+      "max_price": 240.0
+    },
+    {
+      "name": "MICROSOFT",
+      "min_price": 370.0,
+      "max_price": 420.0
+    },
+    {
+      "name": "META",
+      "min_price": 520.0,
+      "max_price": 620.0
+    },
+    {
+      "name": "SP500",
+      "min_price": 5400.0,
+      "max_price": 5800.0
+    },
+    {
+      "name": "NASDAQ",
+      "min_price": 17000.0,
+      "max_price": 19000.0
+    },
+    {
+      "name": "DOW",
+      "min_price": 41000.0,
+      "max_price": 44000.0
+    }
+  ]
+}
