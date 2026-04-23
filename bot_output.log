@@ -1,0 +1,35 @@
+OpenBLAS WARNING - could not determine the L2 cache size on this system, assuming 256k
+2026-04-23 11:35:35 | INFO     | main | ==================================================
+2026-04-23 11:35:35 | INFO     | main |   Multi-Asset Price Alert Bot
+2026-04-23 11:35:35 | INFO     | main |   Mode: LIVE
+2026-04-23 11:35:35 | INFO     | main | ==================================================
+2026-04-23 11:35:35 | INFO     | persistence | No persistence file found at state.json — starting fresh
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset GOLD: $2900.0000 – $3200.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset SILVER: $30.0000 – $36.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset CRUDE_OIL: $65.0000 – $75.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset BTC: $80000.0000 – $95000.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset ETH: $1700.0000 – $2200.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset XRP: $2.0000 – $2.8000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset SOL: $120.0000 – $175.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset BNB: $580.0000 – $650.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset DOGE: $0.1500 – $0.2500
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset ADA: $0.6500 – $0.9000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset MATIC: $0.4000 – $0.6500
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset NVIDIA: $100.0000 – $135.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset TESLA: $240.0000 – $310.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset GOOGLE: $155.0000 – $185.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset AMAZON: $195.0000 – $225.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset ORACLE: $155.0000 – $185.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset APPLE: $200.0000 – $240.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset MICROSOFT: $370.0000 – $420.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset META: $520.0000 – $620.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset SP500: $5400.0000 – $5800.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset NASDAQ: $17000.0000 – $19000.0000
+2026-04-23 11:35:35 | INFO     | alert_engine | Added asset DOW: $41000.0000 – $44000.0000
+2026-04-23 11:35:35 | INFO     | main | Loaded 22 default price ranges
+2026-04-23 11:35:35 | INFO     | main | Starting all subsystems…
+2026-04-23 11:35:35 | INFO     | stock_fetcher | Stock/commodity poller started (interval=15s)
+2026-04-23 11:35:35 | INFO     | crypto_fetcher | Connecting to Binance WebSocket: 8 stream(s)
+2026-04-23 11:35:35 | INFO     | crypto_fetcher | Binance WebSocket connected ✓
+2026-04-23 11:35:36 | INFO     | alert_engine | 🔔 ALERT: BNB entered range [$580.0000 – $650.0000] at $632.5100
+2026-04-23 11:35:37 | ERROR    | telegram_bot | Failed to send Telegram message: Unauthorized
